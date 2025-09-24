@@ -1,0 +1,75 @@
+.caja-contenido{
+    flex: 1;
+    width: 100%;
+    background-color: #f1f5f9;
+    padding: 2rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+}
+.btnsalir{
+    border: none;
+    border-radius: 6px;
+    font-size: 30px;
+    background-color: transparent;
+    cursor: pointer;
+    position: absolute;
+    top: 50px;
+    right: 25px;
+}
+.encabezado h2{
+    color: #0d1e41;
+
+}
+.content{
+    background: white;
+    border-radius: 10px;
+    padding: 40px;
+    max-width: 100%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.content input{
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.btnborrar{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+.btnborrar button{
+    width: auto;
+    background-color: #dc3545;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+.btnag button{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 5px;
+}
+/*RESPONSIVE*/
+@media (max-width: 1109px){
+.caja-contenido{
+    padding: 6rem 1.5rem;
+}
+.btnsalir{
+    top: 110px;
+    right: 15px;
+}
+.content{
+    padding: 25px;
+}
+}
