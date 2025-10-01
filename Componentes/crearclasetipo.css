@@ -6,6 +6,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 
 }
 .btnsalir{
@@ -37,14 +38,14 @@
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
-.btnborrar{
+.tipo-row{
     margin-top: 10px;
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 5px;
 }
-.btnborrar button{
+.tipo-row button{
     width: auto;
     background-color: #dc3545;
     padding: 5px 10px;
@@ -60,6 +61,54 @@
     font-size: 16px;
     margin-top: 5px;
 }
+
+
+/*CARGAR CLASE Y TIPO*/
+.clase-box {
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.clase-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    margin-bottom: 4px;
+    background: #f8f8f8;
+}
+
+.btn-eliminar-clase {
+    width: 100%;
+    margin-top: 5px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tipos-lista {
+    margin-top: 8px;
+}
+.tipo-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+}
+.tipos-lista.hidden {
+    display: none;
+}
+
+
+
 /*RESPONSIVE*/
 @media (max-width: 1109px){
 .caja-contenido{

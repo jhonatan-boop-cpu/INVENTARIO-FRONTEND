@@ -31,26 +31,32 @@
         
         <nav class="caja">
             <div class="options">
-                <select onchange="location = this.value;">
+                <select id="tipoMovimiento">
                     <option disabled selected>Selecciona un movimiento</option>
                     <option value="Entrada.html">Entrada</option>
                     <option value="Salida.html">Salida</option>
                 </select>
 
-                <select>
+                <select id="selectComponente">
                 <option disabled selected>Seleccionar componente</option>
                 </select>
             </div>
-            
+
+            <div id="stockContainer" style="margin-top: 8px; display:none;">
+                <label id="stockLabel">Stock actual: -</label>
+            </div>
+        
             <div class="options">
-                <input type="number" placeholder="Cantidad" min="0">
-                <input type="text" placeholder="Nombre de la persona que entrega">
+                <input id="cantidad" type="number" placeholder="Cantidad" min="0">
+                <input id="nombrePersona" type="text" placeholder="Nombre de la persona que entrega">
             </div>
             
-            <textarea placeholder="Motivo (opcional)"></textarea>
-            <button class="btnguardar">✔ Guardar Movimiento</button>
+            <textarea id="motivo" placeholder="Motivo (opcional)"></textarea>
+            <button class="btnguardar" id="guardarMovimiento">✔ Guardar Movimiento</button>
         </nav>
     </div>
     <script src="../Scriptss/Global.js"></script>
+    <script type="module" src="../Scriptss/movimientos.js"></script>
+
 </body>
 </html>

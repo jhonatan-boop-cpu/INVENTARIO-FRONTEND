@@ -25,32 +25,27 @@
             </nav>
         </div>
     </div>
-
-
     <div class="caja-contenido"> 
-            <button class="btnsalir"  onclick="location.href='Componentes.html'">⬅️</button>
+        <button class="btnsalir" onclick="location.href='Componentes.html'">⬅️</button>
         <header class="encabezado">
             <h2>Nueva Clase</h2>
         </header>
         <nav class="content">
             <input id="inpNombreClase" type="text" placeholder="Nombre de la clase">
             <div id="tiposContainer" class="tipos">
-                <div class="tipo=row">
-                <input class="inpTipo" type="text" placeholder="Tipo 1">
-                <button type="button">🗑️</button>
+                <div class="tipo-row">
+                    <input class="inpTipo" type="text" placeholder="Tipo 1">
+                    <button type="button">🗑️</button>
                 </div>
             </div>
             <div class="btnag">
                 <button id="btnAddTipo" type="button">➕ Añadir Tipo</button>
                 <button id="btnGuardarClaseTipo" type="button">➕ Guardar Clase y Tipo</button>
             </div>
-            
         </nav>
         <h4>Clase y Tipo Registrados</h4>
+        <div id="clasesContainer"></div>
     </div>
-    <script src="../Scriptss/Global.js"></script>
-   <!-- <script type="module" src="/Scriptss/api.js"></script> -->
     <script type="module" src="/Scriptss/clase.js"></script>
-
 </body>
 </html>

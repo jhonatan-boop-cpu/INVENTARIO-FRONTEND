@@ -28,44 +28,43 @@
             </nav>
         </div>
     </div>
+
     <div class="caja-contenido">
         <header class="encabezado">
             <h1>Técnicos</h1>
             <button class="boton" onclick="btnCrear()">Crear Técnico</button>
         </header>
+
         <nav class="buscador">
-            <input type="text" placeholder="Buscar por nombre o apellido">
+            <input type="text" id="buscarTecnico" placeholder="Buscar por nombre o apellido">
         </nav>
         
         <div class="tablaborde">
-            <table class="tabla">
-            <tr class="th">
-                <th>Nombre</th>
-                <th>Acciones</th>
-            </tr>
-            <tbody id="datostabla">
-
-            </tbody>
-        </table>
+            <table class="tabla" id="tablaTecnicos">
+                <tr class="th">
+                    <th>Nombre</th>
+                    <th>Acciones</th>
+                </tr>
+                <tbody id="datosTecnicos" class="datostabla">
+                    <!-- Aquí se renderizan los técnicos desde JS -->
+                </tbody>
+            </table>
         </div>
     </div>
 
-
-
-    <!--MODAL-->
+    <!--MODAL CREAR / EDITAR TÉCNICO-->
     <div class="MODAL" id="miModal">
         <div class="modal">
-            <h2>Crear Técnico</h2>
-            <input type="text" id="nombre" placeholder="Nombre">
+            <h2 id="tituloModal">Crear Técnico</h2>
+            <input type="text" id="nombreTecnico" placeholder="Nombre">
             <nav class="botones">
-                <button id="btnGuardar">Guardar</button>
+                <button id="btnGuardarTecnico">Guardar</button>
                 <button id="btnCancelar" onclick="btnCancelar()">Cancelar</button>
             </nav>
         </div>
     </div>
 
-    <script src="../Scriptss/tecnicos.js"></script>
+    <script type="module" src="../Scriptss/tecnicos.js"></script>
     <script src="../Scriptss/Global.js"></script>
-
 </body>
 </html>

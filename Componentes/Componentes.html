@@ -35,13 +35,12 @@
                 <button class="btnmovimiento" onclick="location.href='Movimientos.html'">Resgistrar Movimiento</button>
             </div>
         </header>
-        <nav class="buscador">
+        <nav class="buscador" id="buscador">
             <input type="text" placeholder="Buscar por nombre o codigo">
         </nav>
         <div class="tablaborde">
             <table class="tabla">
                 <tr class="th">
-                    <th>Imagen</th>
                     <th>Nombre</th>
                     <th>Código</th>
                     <th>Cantidad</th>
@@ -69,40 +68,43 @@
                 <input type="text" id="nombre" placeholder="Nombre">
                 <input type="text" id="descripcion" placeholder="Descripción">
                 
-                <select id="clase">
-                    <option disabled selected>Seleccione una Clase</option>
-                    <option>Clase 1</option>
-                    <option>Clase 2</option>
-                </select> 
+                <select id="clase"></select> 
 
-                <select id="tipo">
-                    <option disabled selected>Seleccione un Tipo</option>
-                    <option>Tipo 1</option>
-                    <option>Tipo 2</option>
-                </select>
+                <select id="tipo"></select>
                 
                 <input type="text" id="modelo" placeholder="Modelo">
                 <input type="text" id="marca" placeholder="Marca">
                 
                 <input type="number" id="cantidad" placeholder="Cantidad" min="0">
-
             </nav> 
-
-                <h3>Imagen del componente</h3>
-
-            <div class="image">
-                <div class="vistaimg">Vista previa</div>
-                <label class="btnsubirimg">
-                <input type="file" id="imagen" accept="image/*" hidden>
-                ⬆️ Subir imagen
-                </label>
-            </div>
-            <button class="btnguardar" id="Guardarmodal">Guardar Componente</button>
+            <button class="btnguardar" id="guardarComponente">Guardar Componente</button>
         </div>
     </div>
-    
-    <script src="../Scriptss/componentes.js"></script>
+
+
+    <!-- MODAL EDITAR COMPONENTE -->
+    <div class="MODAL" id="mimodalE">
+        <div class="modal">
+            <header class="encabezadomodal">
+                <h2 class="h2">Editar Componente</h2>
+                <span class="close" onclick="cerrarModalE()">&times;</span>
+            </header>
+                
+            <nav class="modalcontent">
+                <input type="text" id="nombreE" placeholder="Nombre">
+                <input type="text" id="descripcionE" placeholder="Descripción">
+                
+                <input type="text" id="modeloE" placeholder="Modelo">
+                <input type="text" id="marcaE" placeholder="Marca">
+                
+                <input type="number" id="cantidadE" placeholder="Cantidad" min="0">
+            </nav> 
+            <button class="btnguardar" id="guardarCambiosE">Guardar Cambios</button>
+        </div>
+    </div>
+
     <script src="../Scriptss/Global.js"></script>
+    <script type="module" src="../Scriptss/componentes.js"></script>
 
 </body>
 </html>

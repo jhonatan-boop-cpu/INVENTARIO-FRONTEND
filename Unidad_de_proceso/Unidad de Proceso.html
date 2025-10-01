@@ -27,22 +27,32 @@
             </nav>
         </div>
     </div>
+
     <div class="caja-contenido">
         <header class="encabezado">
             <h1>Unidades de Proceso</h1>
         </header>
         <nav class="box">
-            <input type="text" placeholder="Nombre de la nueva unidad">
-            <button>Agregar</button>
+            <input type="text" id="inpNombreUnidad" placeholder="Nombre de la nueva unidad">
+            <button id="btnAgregarUnidad">Agregar</button>
         </nav>
         <div class="buscador">
-            <input type="text" placeholder="Buscar unidad">
+            <input type="text" id="buscarUnidad" placeholder="Buscar unidad">
         </div>
 
-        <main>
-            <table></table>
-        </main>
+        <div class="tablaborde">
+            <table class="tabla" id="tablaUnidades">
+                <thead>
+                    <tr class="th">
+                        <th>Nombre</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="datosUnidades" class="datostabla"></tbody>
+            </table> 
+        </div>
     </div>
+    <script type="module" src="../Scriptss/unidaddeproceso.js"></script>
     <script src="../Scriptss/Global.js"></script>
     
 </body>

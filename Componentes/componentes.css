@@ -73,17 +73,19 @@
     width: 100%;
     border-collapse: collapse;
     table-layout: auto; 
-    min-width: unset;
 }
+
 .th th{
     background-color: #e5edf5;
     color: #374151;
+    text-align: left;
 }
 td, th{
     padding: 10px;
     border: none;
-    text-align: center;
+    text-align: left;
     border-bottom: 1px solid #acacb4; /* Línea entre filas */
+
 }
 
 /*RESPONSIVE*/

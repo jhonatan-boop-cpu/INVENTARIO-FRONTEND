@@ -32,14 +32,16 @@
             <h2>Registrar Movimiento</h2>
         <nav class="caja">
             <div class="options">
-                <select onchange="location = this.value;">
-                    <option disabled selected>Selecciona un movimiento</option>
+                <select id="tipoMovimiento">
+                    <option value="">Seleccione un movimiento</option>
                     <option value="Entrada.html">Entrada</option>
                     <option value="Salida.html">Salida</option>
                 </select>
+
             </div>
         </nav>
     </div>
     <script src="../Scriptss/Global.js"></script>
+    <script type="module" src="../Scriptss/movimientos.js"></script>
 </body>
 </html>

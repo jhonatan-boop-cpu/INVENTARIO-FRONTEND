@@ -52,6 +52,31 @@
     border-radius: 8px;
     font-size: 15px;
 }
+.tablaborde{
+    overflow-x: auto;
+    background: #fff;
+    padding: 1rem;
+    border-radius: .75rem;
+    box-shadow: 0 0 6px #0000000d;
+}
+.tabla{
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto; 
+}
+
+.th th{
+    background-color: #e5edf5;
+    color: #374151;
+    text-align: left;
+}
+td, th{
+    padding: 10px;
+    border: none;
+    text-align: left;
+    border-bottom: 1px solid #acacb4; /* Línea entre filas */
+
+}
 
 /*RESPONSIVE*/
 @media (max-width: 1109px){
