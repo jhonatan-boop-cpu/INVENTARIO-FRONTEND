@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../global/Style.css">
+    <link rel="stylesheet" href="componentes.css">
+    <link rel="stylesheet" href="nuevocomponente.css">
+    <link rel="preload" as="image" href="../global/foto1.jpg">
+</head>
+<body>
+    <button class="menu-btn" id="menuBtn">☰</button>
+    <div class="fondo_menu">
+        <div class="Menu-container">
+            <a class="logo" href="../Inicio/Inicio.html">
+                <img src="../global/Logo.png" alt="Inventario ABD">
+            </a> 
+            <nav class="lista">
+                <li><a href="../Inicio/Inicio.html">Inicio</a></li>
+                <li><a href="../Componentes/Componentes.html">Componentes</a></li>
+                <li><a href="../Unidad_de_proceso/Unidad de Proceso.html">Unidad de Proceso</a></li>
+                <li><a href="../Entradas_y_salidas/Entradas y salidas.html">Entradas y salidas</a></li>
+                <li><a href="../Tecnicos/Tecnicos.html">Técnicos</a></li>
+                <li><a href="">Sesión cerrada</a></li>
+            </nav>
+        </div>
+    </div>
+    <div class="caja-contenido">
+        <header class="encabezado">
+            <h1>Componentes registrados</h1>
+            <div class="botones">
+                <button class="btncrear" onclick="abrirModal()">Crear componente</button>
+                <button class="btnclase" onclick="location.href='Crearclasetipo.html'">Crear clase y tipo</button>
+                <button class="btnmovimiento" onclick="location.href='Movimientos.html'">Resgistrar Movimiento</button>
+            </div>
+        </header>
+        <nav class="buscador" id="buscador">
+            <input type="text" placeholder="Buscar por nombre o codigo">
+        </nav>
+        <div class="tablaborde">
+            <table class="tabla">
+                <tr class="th">
+                    <th>Nombre</th>
+                    <th>Código</th>
+                    <th>Cantidad</th>
+                    <th>Modelo</th>
+                    <th>Acciones</th>
+                </tr>
+                <tbody id="datostabla" class="datostabla">
+
+                </tbody>
+                
+            </table> 
+        </div>
+    </div>
+
+    <!-- MODAL -->
+
+    <div class="MODAL" id="mimodal">
+        <div class="modal">
+            <header class="encabezadomodal">
+                <h2 class="h2">Nuevo Componente</h2>
+                <span class="close" onclick="cerrarModal()">&times;</span>
+            </header>
+                
+            <nav class="modalcontent">
+                <input type="text" id="nombre" placeholder="Nombre">
+                <input type="text" id="descripcion" placeholder="Descripción">
+                
+                <select id="clase"></select> 
+
+                <select id="tipo"></select>
+                
+                <input type="text" id="modelo" placeholder="Modelo">
+                <input type="text" id="marca" placeholder="Marca">
+                
+                <input type="number" id="cantidad" placeholder="Cantidad" min="0">
+            </nav> 
+            <button class="btnguardar" id="guardarComponente">Guardar Componente</button>
+        </div>
+    </div>
+
+
+    <!-- MODAL EDITAR COMPONENTE -->
+    <div class="MODAL" id="mimodalE">
+        <div class="modal">
+            <header class="encabezadomodal">
+                <h2 class="h2">Editar Componente</h2>
+                <span class="close" onclick="cerrarModalE()">&times;</span>
+            </header>
+                
+            <nav class="modalcontent">
+                <input type="text" id="nombreE" placeholder="Nombre">
+                <input type="text" id="descripcionE" placeholder="Descripción">
+                
+                <input type="text" id="modeloE" placeholder="Modelo">
+                <input type="text" id="marcaE" placeholder="Marca">
+                
+                <input type="number" id="cantidadE" placeholder="Cantidad" min="0">
+            </nav> 
+            <button class="btnguardar" id="guardarCambiosE">Guardar Cambios</button>
+        </div>
+    </div>
+
+    <script src="../Scriptss/Global.js"></script>
+    <script type="module" src="../Scriptss/componentes.js"></script>
+
+</body>
+</html>
