@@ -58,7 +58,7 @@ selectClase?.addEventListener("change", async () => {
 });
 
 //tabla componentes    
-async function cargarTabla(/* filtrados = null*/) {
+async function cargarTabla() {
     const componentes = await api.listarComponentes().catch(() => []);
     datosTabla.innerHTML = componentes.map(c => `
         <tr onclick = "window.location.href='detalleComponente.html?id=${c.id}'" style="cursor: pointer;">
@@ -159,7 +159,6 @@ const detalleModelo = $("#detalleModelo");
 const detalleMarca = $("#detalleMarca");
 const detalleCantidad = $("#detalleCantidad");
 const detalleDescripcion = $("#detalleDescripcion");
-// const detalleHistorial = $("#detalleHistorial"); // Opcional
 
 // Obtener id de la URL (?id=123)
 const params = new URLSearchParams(window.location.search);
@@ -188,8 +187,6 @@ async function cargarDetalle(id) {
         detalleCantidad.textContent = componente.cantidad || "";
         detalleDescripcion.value = componente.descripcion || "";
 
-        //cargarHistorial(componente.historial);
-
     } catch (e) {
         alert("Error cargando detalle: " + e.message);
         console.error(e);
@@ -197,7 +194,6 @@ async function cargarDetalle(id) {
     cargarHistorial(id);
 }
 
-// formateador de fecha (local, parecido al que usas en otras pantallas)
 function Fecha(raw) {
     if (!raw) return "-";
     const d = new Date(raw);
@@ -211,7 +207,6 @@ function Fecha(raw) {
         hour12: true
     });
 }
-
 
 async function cargarHistorial(id) {
     
@@ -271,8 +266,3 @@ async function cargarHistorial(id) {
         detalleHistorial.innerHTML = `<tr><td colspan="7">No hay historial</td></tr>`
     }
 }
-
-
-
-
-

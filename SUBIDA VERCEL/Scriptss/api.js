@@ -1,6 +1,6 @@
 const pathBase = "";
 
-export const API = "http://localhost:3000/api" + pathBase;
+export const API = "https://inventario-backend-oif2.onrender.com/api" + pathBase;
 
 async function req(path, opt = {}) {
     const r = await fetch(API + path, {
