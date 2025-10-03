@@ -29,6 +29,9 @@ const selectClase = $("#clase");
 const selectTipo = $("#tipo");
 const btnGuardar = $("#guardarComponente");
 const datosTabla = $("#datostabla");
+const buscarComponente = $("#buscarComponente");
+
+//EDITAR COMPONENTE
 
 const inputNombreE = $("#nombreE");
 const inputDescripcionE = $("#descripcionE");
@@ -48,6 +51,7 @@ async function cargarClasesTipos() {
 
         selectTipo.innerHTML = `<option disabled selected>seleccione un tipo</option>`;
     }
+
 selectClase?.addEventListener("change", async () => {
     const claseId = selectClase.value;
     if (!claseId) return;
@@ -57,10 +61,22 @@ selectClase?.addEventListener("change", async () => {
     tipos.map(t => `<option value = "${t.id}">${t.nombre}</option>`).join("");
 });
 
+/*buscarComponente.addEventListener("input", e => {
+    const filtro = e.target.value.toLowerCase();
+    datosTabla.querySelectorAll("tr").forEach(fila => {
+        fila.style.display = fila.innerText.toLowerCase().includes(filtro) ? "" : "none";
+    });
+});*/
+
 //tabla componentes    
-async function cargarTabla() {
+async function cargarTabla(filtro = "") {
     const componentes = await api.listarComponentes().catch(() => []);
-    datosTabla.innerHTML = componentes.map(c => `
+    //buscar componente
+    const filtrados = componentes.filter(c =>
+        c.nombre.toLowerCase().includes(filtro.toLowerCase())
+    );
+    //mostrar tabla
+    datosTabla.innerHTML = filtrados.map(c => `
         <tr onclick = "window.location.href='detalleComponente.html?id=${c.id}'" style="cursor: pointer;">
             <td>${c.nombre}</td>
             <td>${c.codigo}</td>
@@ -107,9 +123,6 @@ btnGuardar?.addEventListener("click", async () => {
         alert("Error: " + e.message);
     }
 });
-cargarTabla();
-cargarClasesTipos();
-
 
 //ELIMINAR COMPONENTE
 window.eliminarComponente = async function(id){
@@ -169,6 +182,11 @@ if (detalleCodigo && componenteId) {
     cargarDetalle(componenteId);
 }
 
+//input para buscar (despues de cargar detalle) 
+buscarComponente.addEventListener("input", (e) => {
+    cargarTabla(e.target.value);
+});
+
 async function cargarDetalle(id) {
     try {
         const componente = await api.obtenerComponente(id);
@@ -214,8 +232,16 @@ async function cargarHistorial(id) {
     if (!detalleHistorial) 
         return;
     try {
-        const entradas = await api.listarEntradas().catch(() => []);
-        const salidas = await api.listarSalidas().catch(() => []);
+        const [entradas, salidas, responsables, unidades] = await Promise.all([
+            api.listarEntradas().catch(() => []),
+            api.listarSalidas().catch(() => []),
+            api.listarTecnicos().catch(() => []),
+            api.listarUnidades().catch(() => [])
+        ]);
+
+        const mapaResp = Object.fromEntries(responsables.map(r => [r.id, r.nombre]));
+        const mapaUnidades = Object.fromEntries(unidades.map(u => [u.id, u.nombre]));
+
 
         const entradasComp = entradas.filter(e => e.componenteId == id)
             .map(e => {
@@ -240,8 +266,8 @@ async function cargarHistorial(id) {
                 fecha: Fecha(fechaRaw),
                 tipo: "Salida",
                 cantidad: s.cantidad,
-                persona: s.responsable?.nombre || "-",
-                unidadProceso: s.unidad?.nombre || "-",
+                persona: mapaResp[s.responsableId] || "-",
+                unidadProceso: mapaUnidades[s.unidadId] || "-",
                 ordenTrabajo: s.tipodeorden || "-",
                 motivo: s.motivo || ""
                 }
@@ -252,7 +278,7 @@ async function cargarHistorial(id) {
         detalleHistorial.innerHTML = historial.map(h => `
             <tr>
                 <td>${h.fecha}</td>
-                <td>${h.tipo}</td>
+                <td style="color:${h.tipo === "Entrada" ? "#2bb673" : "#fc1111a8"}">${h.tipo}</td>
                 <td>${h.cantidad}</td>
                 <td>${h.persona}</td>
                 <td>${h.unidadProceso}</td>
@@ -266,3 +292,5 @@ async function cargarHistorial(id) {
         detalleHistorial.innerHTML = `<tr><td colspan="7">No hay historial</td></tr>`
     }
 }
+cargarTabla();
+cargarClasesTipos();

@@ -56,7 +56,7 @@ async function cargarUnidades() {
     }
     }
 
-    async function cargarResponsables() {
+async function cargarResponsables() {
     if (!selectResponsable) return;
     try {
         const responsables = await api.listarTecnicos();
@@ -78,15 +78,15 @@ btnGuardar?.addEventListener("click", async () => {
 
     try {
 
-
+//registrar entrada
         if (page.includes("Entrada.html")) {
         const nombre = inputNombre?.value?.trim();
         if (!componenteId || !cantidad || !nombre)
             return alert("Faltan campos obligatorios para la entrada");
         await api.registrarEntrada(componenteId, nombre, cantidad, motivo);
         alert("Entrada registrada correctamente");
-
-
+        
+//registrar salida
         } else if (page.includes("Salida.html")) {
         const codigo = inputCodigo?.value?.trim();
         const tipodeorden = selectTipoOrden?.value;

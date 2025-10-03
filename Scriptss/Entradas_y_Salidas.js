@@ -171,7 +171,7 @@ tabla.addEventListener("click", async (e) => {
                 $("#persona2").value = movimiento.responsableId || "";
                 $("#orden2").value = movimiento.tipodeorden || "";
                 $("#obs2").value = movimiento.motivo || "";
-                $("#unidad").value = movimiento.unidadId || ""; // ⚠️ ojo: revisa si aquí necesitas ID
+                $("#unidad").value = movimiento.unidadId || ""; 
                 $("#modalSalida").dataset.componenteId = movimiento.componenteId;
 
                 abrirModalE();
@@ -187,7 +187,6 @@ document.querySelector("#modalEntrada form").addEventListener("submit", async (e
     e.preventDefault();
     try {
         const cantidad = parseInt($("#cantidad1").value, 10);
-        //const persona = $("#persona1").value;
         const personaText = $("#persona1").options[$("#persona1").selectedIndex].text; ///** */
         const obs = $("#obs1").value;
         const componenteId =parseInt ($("#modalEntrada").dataset.componenteId,10);
