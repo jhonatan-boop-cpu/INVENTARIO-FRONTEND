@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../global/Style.css">
+    <link rel="stylesheet" href="unidadproceso.css">
+    <link rel="preload" as="image" href="../global/foto1.jpg">
+    <link rel="preload" as="image" href="../global/Logo.png">
+    
+</head>
+<body>
+    <button class="menu-btn" id="menuBtn">☰</button>
+    <div class="fondo_menu">
+        <div class="Menu-container">
+            <a class="logo" href="../index.html">
+                <img src="../global/Logo.png" alt="Inventario ABD">
+            </a> 
+            <nav class="lista">
+                <li><a href="../Inicio/Inicio.html">Inicio</a></li>
+                <li><a href="../Componentes/Componentes.html">Componentes</a></li>
+                <li><a href="../Unidad_de_proceso/Unidad de Proceso.html">Unidad de Proceso</a></li>
+                <li><a href="../Entradas_y_salidas/Entradas y salidas.html">Entradas y salidas</a></li>
+                <li><a href="../Tecnicos/Tecnicos.html">Técnicos</a></li>
+                <li><a href="">Sesión cerrada</a></li>
+            </nav>
+        </div>
+    </div>
+
+    <div class="caja-contenido">
+        <header class="encabezado">
+            <h1>Unidades de Proceso</h1>
+        </header>
+        <nav class="box">
+            <input type="text" id="inpNombreUnidad" placeholder="Nombre de la nueva unidad">
+            <button id="btnAgregarUnidad">Agregar</button>
+        </nav>
+        <div class="buscador">
+            <input type="text" id="buscarUnidad" placeholder="Buscar unidad">
+        </div>
+
+        <div class="tablaborde">
+            <table class="tabla" id="tablaUnidades">
+                <thead>
+                    <tr class="th">
+                        <th>Nombre</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="datosUnidades" class="datostabla"></tbody>
+            </table> 
+        </div>
+    </div>
+    <script type="module" src="../Scriptss/unidaddeproceso.js"></script>
+    <script src="../Scriptss/Global.js"></script>
+    
+</body>
+</html>
