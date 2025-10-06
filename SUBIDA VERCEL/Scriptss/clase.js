@@ -12,7 +12,7 @@ const clasesContainer = $("#clasesContainer"); //nuevo
 function btnAddTipoInput() {                    //funcion añadir tipo
     const wrap = document.createElement("div"); // <div> crea un elemento nuevo
     wrap.className = "tipo-row";                //(class="tipo-row") le asigna el estilo de esa clase al (crear un elemento)
-    wrap.innerHTML = `<input class="inpTipo" type="text" placeholder="Tipo"><button type="button">🗑️</button>`;
+    wrap.innerHTML = `<input class="inpTipo" type="text" placeholder="Tipo"><button type="button"><i class="bi bi-trash"></i></button>`;
     wrap.querySelector("button").onclick = () => wrap.remove(); //borrar
     contTipos.appendChild(wrap); 
 }
@@ -35,19 +35,21 @@ async function renderListas() {
             <button class = "btn-toggle">▼</button>
         </div>
 
-        <button class = "btn-eliminar-clase" data-id = "${clase.id}">🗑️</button>
 
         <div class = "tipos-lista hidden">
+
+        <button class = "btn-eliminar-clase" data-id = "${clase.id}"><i class="bi bi-trash"></i> Borrar clase</button>
+
             ${(clase.tipo || []).map(t =>`
                 <div class="tipo-row">
                     <span>${t.nombre}</span>
-                    <button class = "btn-eliminar-tipo" data-id = "${t.id}">🗑️</button>
+                    <button class = "btn-eliminar-tipo" data-id = "${t.id}"><i class="bi bi-trash"></i></button>
                 </div>
             `).join("")}
 
         <div class ="tipo-row">
             <input  class="inpNuevoTipo" type="text" placeholder="Nuevo Tipo">
-            <button class="btnaddTipo" data-id="${clase.id}">➕</button>
+            <button class="btnaddTipo" data-id="${clase.id}"><i class="bi bi-plus-circle"></i> </button>
         </div>
         </div> `;
         clasesContainer.appendChild(div);      

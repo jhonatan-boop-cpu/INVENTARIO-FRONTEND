@@ -83,8 +83,8 @@ async function cargarTabla(filtro = "") {
             <td>${c.cantidad}</td>
             <td>${c.modelo}</td>
             <td>
-                <button onclick= "event.stopPropagation(); editarComponente(${c.id})">✏️</button>  
-                <button onclick= "event.stopPropagation(); eliminarComponente(${c.id})">🗑️</button>
+                <button onclick= "event.stopPropagation(); editarComponente(${c.id})"><i class="bi bi-pencil-square"></i> Editar</button>  
+                <button onclick= "event.stopPropagation(); eliminarComponente(${c.id})"><i class="bi bi-trash"></i> Eliminar</button>
             </td>
         </tr>
     `).join("");

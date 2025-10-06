@@ -71,10 +71,10 @@ const renderTabla = (movs) => {
             <td>${m.orden}</td>
             <td>${m.observaciones}</td>
             <td>
-                <button class="ver-btn" data-id="${m.componenteId}" data-tipo="${m.tipo}">Ver</button> 
-                <button class="editar-btn" data-id="${m.id}" data-tipo="${m.tipo}">Editar</button>
+                <button class="ver-btn" data-id="${m.componenteId}" data-tipo="${m.tipo}"><i class="bi bi-file-text"></i> Ver</button> 
+                <button class="editar-btn" data-id="${m.id}" data-tipo="${m.tipo}"><i class="bi bi-pencil-square"></i> Editar</button>
             </td>
-        </tr>
+        </tr>   
     `).join("");
 };
 

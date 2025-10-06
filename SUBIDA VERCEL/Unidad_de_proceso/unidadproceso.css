@@ -2,6 +2,9 @@
     flex: 1;
     background-color: #f1f5f9;
     padding: 2rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 .encabezado h1{
     font-size: 1.5rem;

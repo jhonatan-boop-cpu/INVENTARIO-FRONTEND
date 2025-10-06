@@ -39,8 +39,8 @@ function renderTabla(filtro = "") {
         <tr>
             <td>${t.nombre}</td>
             <td>
-                <button onclick="editarTecnico(${t.id}, '${t.nombre}')">✏️</button>
-                <button onclick="eliminarTecnico(${t.id})">🗑️</button>
+                <button onclick="editarTecnico(${t.id}, '${t.nombre}')"><i class="bi bi-pencil-square"></i> Editar</button>
+                <button onclick="eliminarTecnico(${t.id})"><i class="bi bi-trash"></i> Eliminar</button>
             </td>
         </tr>
     `).join("");
