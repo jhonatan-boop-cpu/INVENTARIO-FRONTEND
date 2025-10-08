@@ -50,7 +50,7 @@
 .buscador {
     display: flex;
     justify-content: center; 
-    margin: 15px;            
+    margin: 15px;
 }
 
 .buscador input {
@@ -60,6 +60,7 @@
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 15px;
+    outline: none;
 }
 
 .tablaborde{

@@ -103,6 +103,8 @@ td, th{
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    outline: none;
+
 }
 .botones{
     display: flex;

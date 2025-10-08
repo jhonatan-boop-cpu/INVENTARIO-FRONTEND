@@ -9,8 +9,8 @@
     
 }
 .modal{
-    width: 400px;
-    height: 350px;
+    width: 420px;
+    height: 390px;
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
@@ -69,13 +69,66 @@
 
 .modal2{
     width: 400px;
-    height: 300px;
+    height: 330px;
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     padding: 20px;
     
 }
+/*EFECTO FLOTANTE*/
+.floating {
+    position: relative;
+    margin: 0rem 0;
+}
+
+.floating input,
+.floating select
+{
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #aaa;
+    border-radius: 6px;
+    outline: none;  /*borde negro del input*/
+    background: white;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+.floating select{
+    appearance: none;
+    cursor: pointer;
+}
+
+.floating label{
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    color: #888;
+    transition: .3s;
+    background: white;
+    padding: 0 4px;
+    pointer-events: none;
+    font-size: 14px
+}
+.floating input:focus,
+.floating input:not(:placeholder-shown),
+.floating select:focus,
+.floating select:not(:invalid):not(:focus) 
+{
+    border-color: #659ed3;
+}
+.floating input:focus + label,
+.floating input:not(:placeholder-shown) + label, 
+.floating select:focus +label,
+.floating select:not(:invalid):not(:focus) + label
+{
+    top: -8px;
+    left: 8px;
+    font-size: 12px;
+    color: #659ed3; 
+}
+
+
 /*RESPONSIVE*/
 @media (max-width: 375px){
 

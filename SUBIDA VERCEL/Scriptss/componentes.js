@@ -46,10 +46,10 @@ let componentesId = null;
 async function cargarClasesTipos() {
         const clases = await api.listarClases().catch(() => []);
 
-        selectClase.innerHTML = `<option disabled selected>seleccione una clase</option>`+
+        selectClase.innerHTML = `<option disabled selected></option>`+
         clases.map(c => `<option value = "${c.id}">${c.nombre}</option>`).join("");   //value = "${c.id} ==> envia por id a la bd tal como lo pide el backend
 
-        selectTipo.innerHTML = `<option disabled selected>seleccione un tipo</option>`;
+        selectTipo.innerHTML = `<option disabled selected></option>`;
     }
 
 selectClase?.addEventListener("change", async () => {

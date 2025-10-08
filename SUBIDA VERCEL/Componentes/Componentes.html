@@ -65,17 +65,36 @@
             </header>
                 
             <nav class="modalcontent">
-                <input type="text" id="nombre" placeholder="Nombre">
-                <input type="text" id="descripcion" placeholder="Descripción">
+                <div class="floating">
+                    <input type="text" id="nombre" placeholder="">
+                    <label for="nombre">Nombre</label>
+                </div>
+                <div class="floating">
+                    <input type="text" id="descripcion" placeholder="">
+                    <label for="descripcion">Descripción</label>
+                </div>
                 
-                <select id="clase"></select> 
-
-                <select id="tipo"></select>
+                <div class="floating">
+                    <select id="clase" required></select> 
+                    <label for="">Seleccione una clase</label>
+                </div>
+                <div class="floating">
+                    <select id="tipo" required></select>
+                    <label for="">Seleccione un tipo</label>
+                </div>
                 
-                <input type="text" id="modelo" placeholder="Modelo">
-                <input type="text" id="marca" placeholder="Marca">
-                
-                <input type="number" id="cantidad" placeholder="Cantidad" min="0">
+                <div class="floating">
+                    <input type="text" id="modelo" placeholder="">
+                    <label for="modelo">Modelo</label>
+                </div>
+                <div class="floating">
+                    <input type="text" id="marca" placeholder="">
+                    <label for="marca">Marca</label>
+                </div>
+                <div class="floating">
+                    <input type="number" id="cantidad" placeholder="" min="0">
+                    <label for="cantidad">Cantidad</label>
+                </div>
             </nav> 
             <button class="btnguardar" id="guardarComponente"><i class="bi bi-check2-circle"></i> Guardar Componente</button>
         </div>
@@ -91,13 +110,27 @@
             </header>
                 
             <nav class="modalcontent">
-                <input type="text" id="nombreE" placeholder="Nombre">
-                <input type="text" id="descripcionE" placeholder="Descripción">
+                <div class="floating">
+                    <input type="text" id="nombreE" placeholder="">
+                    <label for="nombreE">Nombre</label>
+                </div>
+                <div class="floating">
+                    <input type="text" id="descripcionE" placeholder="">
+                    <label for="descripcionE">Descripción</label>
+                </div>
                 
-                <input type="text" id="modeloE" placeholder="Modelo">
-                <input type="text" id="marcaE" placeholder="Marca">
-                
-                <input type="number" id="cantidadE" placeholder="Cantidad" min="0">
+                <div class="floating">
+                    <input type="text" id="modeloE" placeholder="">
+                    <label for="modeloE">Modelo</label>    
+                </div>
+                <div class="floating">
+                    <input type="text" id="marcaE" placeholder="">
+                    <label for="marcaE">Marca</label>
+                </div>
+                <div class="floating">
+                    <input type="number" id="cantidadE" placeholder="" min="0">
+                    <label for="cantidadE">Cantidad</label>
+                </div>
             </nav> 
             <button class="btnguardar" id="guardarCambiosE"><i class="bi bi-check2-circle"></i> Guardar Cambios</button>
         </div>
