@@ -32,15 +32,22 @@
             <h2><i class="bi bi-arrow-left-square-fill"></i> Movimiento de Salida</h2>
         <nav class="caja">
             <div class="options">
-                <select id="tipoMovimiento">
-                    <option disabled selected>Selecciona el tipo de movimiento</option>
-                    <option value="Entrada.html">Entrada</option>
-                    <option value="Salida.html">Salida</option>
-                </select>
-
-                <select id="selectComponente">
-                <option disabled selected>Seleccionar componente</option>
-                </select>
+                <div class="floating"> 
+                    <select id="tipoMovimiento" required>
+                        <option value=""></option>
+                        <option value="Entrada.html">Entrada</option>
+                        <option value="Salida.html">Salida</option>
+                    </select>
+                    <label for="tipoMovimiento">Selecciona el tipo de movimiento</label>
+                </div>
+                
+                <div class="floating">
+                    <select id="selectComponente" required>
+                        <option value=""></option>
+                    </select>
+                    <label for="selectComponente">Seleccionar componentes</label>
+                </div>
+                
             </div>
             
             <div id="stockContainer" style="margin-top: 8px; display: none;">
@@ -48,29 +55,49 @@
             </div>
             
             <div class="options">
-                <input id="cantidad" type="number" placeholder="Cantidad" min="0">
+                <div class="floating">
+                    <input id="cantidad" type="number" placeholder=" " min="0">
+                    <label for="cantidad">Cantidad</label>
+                </div>
             </div>
             
             <div class="options">
-                <select id="tipoOrden">
-                    <option disabled selected>Tipo de orden</option>
+                <div class="floating">
+                    <select id="tipoOrden" required>
+                        <option value=""></option>
+                        <option value="OTP">OTP (Preventivo)</option>
+                        <option value="OTN">OTN (No programado)</option>
+                        <option value="OTS">OTS (No disponible)</option>
+                    </select>
+                    <label for="tipoOrden">Tipo de orden</label>
+                </div>
 
-                    <option value="OTP">OTP (Preventivo)</option>
-                    <option value="OTN">OTN (No programado)</option>
-                    <option value="OTS">OTS (No disponible)</option>
-                </select>
-                <input id="codigo" type="text" placeholder="Codigo de Orden">
+                <div class="floating">
+                    <input id="codigo" type="text" placeholder=" ">
+                    <label for="codigo">Codigo de Orden</label>
+                </div>
             </div>
 
             <div class="options">
-                <select id="unidad">
-                    <option disabled selected>Unidad de Proceso</option>
-                </select>
-                <select id="responsable">
-                    <option disabled selected>Responsable</option>
-                </select>
+                <div class="floating">
+                    <select id="unidad" required>
+                        <option value=""></option>
+                    </select>
+                    <label for="unidad">Unidad de Proceso</label>
+                </div>
+                
+                <div class="floating">
+                    <select id="responsable" required>
+                        <option value=" "></option>
+                        <label for="responsable">Responsable</label>
+                    </select>
+                </div>
+                
             </div>
-            <textarea id="motivo" placeholder="Motivo (opcional)"></textarea>
+            <div class="floating">
+                <textarea id="motivo" placeholder=" "></textarea>
+                <label for="motivo">Motivo (opcional)</label>
+            </div>
             <button id="guardarMovimiento" class="btnguardar"><i class="bi bi-check2-circle"></i> Guardar Movimiento</button>
         </nav>
     </div>

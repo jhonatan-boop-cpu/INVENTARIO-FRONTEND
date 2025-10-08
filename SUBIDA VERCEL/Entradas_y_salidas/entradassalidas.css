@@ -21,12 +21,14 @@
     grid-template-columns: 1fr 1fr; /*divide en 2 columnas*/
     gap: 15px;
     margin-top: 15px;
+    outline: none;
 }
 .buscador select,
 .buscador input{
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    outline: none;
 }
 
 .tablaborde{
@@ -97,13 +99,13 @@ input, select {
     border-radius: 6px;
     font-size: 14px;
 }
-
+/**************/
 input:focus, select:focus {
     outline: none;
     border-color: #2684ff;
     box-shadow: 0 0 4px rgba(38,132,255,0.4);
 }
-
+/***************/
 .buttons {
     display: flex;
     justify-content: flex-end;

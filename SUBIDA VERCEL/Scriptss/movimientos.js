@@ -35,7 +35,7 @@ async function cargarComponentes() {
     try {
         const componentes = await api.listarComponentes();
         selectComponente.innerHTML = `
-        <option value ="" disabled selected>Seleccione un componente</option>    
+        <option value ="" disabled selected></option>    
         ${componentes.map((c) => `<option value="${c.id}">${c.nombre}</option>`).join("")}
         `;
     } catch (e) {
@@ -48,7 +48,7 @@ async function cargarUnidades() {
     try {
         const unidades = await api.listarUnidades();
         selectUnidad.innerHTML = `
-        <option value ="" disabled selected>Seleccione una unidad</option>    
+        <option value ="" disabled selected></option>    
         ${unidades.map((u) => `<option value="${u.id}">${u.nombre}</option>`).join("")}
         `;
     } catch (e) {
@@ -61,7 +61,7 @@ async function cargarResponsables() {
     try {
         const responsables = await api.listarTecnicos();
         selectResponsable.innerHTML = `
-        <option value ="" disabled selected>Seleccione un responsable</option>    
+        <option value ="" disabled selected></option>    
         ${responsables.map((r) => `<option value="${r.id}">${r.nombre}</option>`).join("")}
         `;
     } catch (e) {

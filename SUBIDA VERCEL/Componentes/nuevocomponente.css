@@ -46,6 +46,7 @@
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    outline: none;
 }
 .modal h3{
     color: #060468;

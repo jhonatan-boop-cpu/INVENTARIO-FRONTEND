@@ -27,21 +27,32 @@
             </nav>
         </div>
     </div>
+
+
     <div class="caja-contenido">
         <button class="btnsalir"  onclick="location.href='Componentes.html'"><i class="bi bi-arrow-left-square-fill"></i></button>
             <h2><i class="bi bi-arrow-left-right"></i> Movimiento de Entrada</h2>
         
         <nav class="caja">
             <div class="options">
-                <select id="tipoMovimiento">
-                    <option disabled selected>Selecciona un movimiento</option>
-                    <option value="Entrada.html">Entrada</option>
-                    <option value="Salida.html">Salida</option>
-                </select>
 
-                <select id="selectComponente">
-                <option disabled selected>Seleccionar componente</option>
-                </select>
+                <div class="floating">
+                    <select id="tipoMovimiento" required>
+                        <option value=""></option>
+                        <option value="Entrada.html">Entrada</option>
+                        <option value="Salida.html">Salida</option>
+                    </select>
+                    <label for="tipoMovimiento">Selecciona un movimiento</label>
+                </div>
+                    
+                
+                <div class="floating">
+                    <select id="selectComponente" required>
+                        <option value=""></option>
+                    </select>
+                    <label for="selectComponente">Seleccionar componentes</label>
+                </div>
+                
             </div>
 
             <div id="stockContainer" style="margin-top: 8px; display:none;">
@@ -49,11 +60,20 @@
             </div>
         
             <div class="options">
-                <input id="cantidad" type="number" placeholder="Cantidad" min="0">
-                <input id="nombrePersona" type="text" placeholder="Nombre de la persona que entrega">
+                <div class="floating">
+                    <input id="cantidad" type="number" placeholder=" " min="0">
+                    <label for="cantidad">Cantidad</label>
+                </div>
+                <div class="floating">
+                    <input id="nombrePersona" type="text" placeholder=" ">
+                    <label for="nombrePersona">Nombre de la persona que entrega</label>
+                </div>
             </div>
             
-            <textarea id="motivo" placeholder="Motivo (opcional)"></textarea>
+            <div class="floating">
+                <textarea id="motivo" placeholder=" "></textarea>
+                <label for="motivo">Motivo (opcional)</label>
+            </div>
             <button class="btnguardar" id="guardarMovimiento"><i class="bi bi-check2-circle"></i> Guardar Movimiento</button>
         </nav>
     </div>

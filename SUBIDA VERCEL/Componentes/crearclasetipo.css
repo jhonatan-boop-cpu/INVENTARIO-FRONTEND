@@ -37,6 +37,7 @@
     border-radius: 5px;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    outline: none;
 }
 .tipo-row{
     margin-top: 10px;
