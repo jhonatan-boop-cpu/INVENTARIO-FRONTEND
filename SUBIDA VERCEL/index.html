@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inventario ABD</title>
     <link rel="stylesheet" href="./global/Style.css">
     <link rel="stylesheet" href="./Inicio/inicio.css">
     <link rel="preload" as="image" href="./global/foto1.jpg">
@@ -26,14 +26,43 @@
                 <li><a href="./index.html">Sesión cerrada</a></li>
             </nav>
         </div>
-    </div>  
-    
-    <div class="Contenido-inicio">
-        <h1>¡Bienvenido a Inventario ABD!</h1>
-        <p>Próximamente más funcionalidades, mejoras, andamos trabajando en ello. ✨</p>
-        
     </div>
+
+    <div class="main-content">
+        
+
+        <div class="welcome">
+            <h1>¡Bienvenido a Inventario ABD!</h1>
+            <p>Próximamente más funcionalidades, mejoras, andamos trabajando en ello. ✨</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <h3>Total de Componentes</h3>
+                <div id="total-componentes" class="stat-value">0</div>
+                <div class="stat-trend up">Cargando...</div>
+            </div>
+            <div class="stat-card">
+                <h3>Entradas/Salidas</h3>
+                <div id="total-movimientos" class="stat-value">0</div>
+                <div class="stat-trend up">Cargando...</div>
+            </div>
+            <div class="stat-card">
+                <h3>Entradas de hoy</h3>
+                <div id="entradas-hoy" class="stat-value">0</div>
+                <div class="stat-trend down">Cargando...</div>
+            </div>
+            <div class="stat-card">
+                <h3>Salidas de Hoy</h3>
+                <div id="salidas-hoy" class="stat-value">0</div>
+                <div class="stat-trend up">Cargando...</div>
+            </div>
+        </div>
+    </div>
+
+    
     <script src="./Scriptss/Global.js"></script>
+    <script type="module" src="./Scriptss/Inicio.js"></script>
     
 </body>
 </html>
