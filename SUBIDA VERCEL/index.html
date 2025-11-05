@@ -58,11 +58,28 @@
                 <div class="stat-trend up">Cargando...</div>
             </div>
         </div>
+
+        <div class="recent-activity" id="seccion-historial">
+            <h2>Actividad Reciente</h2>
+            <ul class="activity-list" id="lista-actividad">
+                <li class="activity-item">
+                    <div class="activity-icon">📝</div>
+                    <div class="activity-content">
+                        <div class="activity-title">Cargando actividad reciente...</div>
+                        <div class="activity-time">Espere por favor...</div>
+                    </div>
+                </li>
+            </ul>
+            <div id="sin-actividad" class="sin-actividad" style="display: none;">
+                <p>No hay actividad reciente.</p>
+            </div>
+        </div>
     </div>
 
     
     <script src="./Scriptss/Global.js"></script>
     <script type="module" src="./Scriptss/Inicio.js"></script>
+    <script type="module" src="./Scriptss/HistorialManager.js"></script>
     
 </body>
 </html>
